@@ -1,0 +1,28 @@
+{% extends "AppCoder/inicio.html"%}
+
+{% load static %}
+
+{% block herencia %}
+    
+    <h1>Lista de Productos</h1>
+
+   {% if productos %}
+
+        <ul>
+        {% for p in productos %}
+            <li>{{p}}</li>
+            <button>
+                <a href="{% url 'eliminarproducto' m.nombreProducto %}">Borrar| </a>
+                <a href="{% url 'editarproducto' m.nombreProducto %}">Actualizar</a>
+            </button>
+            <br>
+        {% endfor %}
+        </ul>
+        <p>
+            <a href="formularioproducto">Agregar</a>
+            
+        </p>
+    
+   {% endif %}
+
+{% endblock %}

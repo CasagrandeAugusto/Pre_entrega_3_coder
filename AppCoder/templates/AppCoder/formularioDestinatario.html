@@ -1,0 +1,39 @@
+{% extends "AppCoder/inicio.html"%}
+
+{% load static %}
+
+{% block herencia %}
+
+  
+
+    <h1>Formulario - Editar Destinatario</h1>
+    
+    {% if  miFormulariodestinatario.errors %}
+
+    <p style="color: red;"> Los datos son erroneos, por favor revise</p>
+
+    {% endif %}
+
+
+    <form action="" method="POST">{% csrf_token %}
+
+       
+        <table>
+
+            {{  miFormulariodestinatario.as_table }}
+
+
+        </table>
+
+
+        <input type="submit", value="Enviar">
+
+    </form>
+  
+
+{% endblock %}
+
+
+
+
+

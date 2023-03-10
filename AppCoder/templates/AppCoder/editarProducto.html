@@ -1,0 +1,36 @@
+{% extends "AppCoder/inicio.html"%}
+
+{% load static %}
+
+{% block herencia %}
+
+  
+
+    <h1>Formulario - Agregar Producto</h1>
+    
+    {% if  miFormularioprod.errors %}
+
+    <p style="color: red;"> Los datos son erroneos, por favor revise</p>
+
+    {% endif %}
+
+
+    <form action="" method="POST">{% csrf_token %}
+
+       
+        <table>
+
+            {{  miFormularioprod.as_table }}
+
+
+        </table>
+
+
+        <input type="submit", value="Enviar">
+
+    </form>
+  
+
+{% endblock %}
+
+

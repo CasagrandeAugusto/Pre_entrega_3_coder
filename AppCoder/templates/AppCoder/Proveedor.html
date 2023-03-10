@@ -1,0 +1,28 @@
+{% extends "AppCoder/inicio.html"%}
+
+{% load static %}
+
+{% block herencia %}
+
+
+    <h1>Listado de Proveedores</h1>
+    
+    
+    <ul>   
+    {% for p in proveedores %}
+        <li>{{p}}</li>
+        <button>
+            <a href="{% url 'eliminarproveedor' p.nombreP %}">Borrar | </a>
+            <a href="{% url 'editarproveedor' p.nombreP %}">Actualizar</a>
+        </button>
+        <br>
+    {% endfor %}      
+    </ul>    
+    <p>
+        <a href="formularioproveedor">Agregar</a>
+        
+    </p>
+
+    
+
+{% endblock %}

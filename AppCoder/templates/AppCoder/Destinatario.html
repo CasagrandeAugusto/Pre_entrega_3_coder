@@ -1,0 +1,25 @@
+{% extends "AppCoder/inicio.html"%}
+
+{% load static %}
+
+{% block herencia %}
+    
+    <h1>Lista de destinatarios.</h1>
+
+   <ul>
+    {% for d in destinatarios %}
+        <li>{{d}}</li>
+        <button>
+            <a href="">Borrar| </a>
+            <a href="">Actualizar</a>
+        </button>
+        <br>
+    {% endfor %}
+    </ul>
+    <p>
+        <a href="formulariodestinatario">Agregar</a>
+        
+    </p>    
+    
+
+{% endblock %}
